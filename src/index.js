@@ -18,7 +18,7 @@ const app = express();
 app.use(express.static("public"));
 app.use(express.static(path.join(__dirname, "/public")));
 // app.use("/public/", express.static("public"));
-app.use(express.json({ limit: '100mb' }));
+app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
