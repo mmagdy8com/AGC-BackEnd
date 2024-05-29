@@ -19,7 +19,7 @@ exports.generateRefreshToken = (id) => {
 };
 
 exports.verifyToken = (token) => {
-  const decoded = jwt.verify('${token}', process.env.REFRESH_JWT_SECRET);
+  const decoded = jwt.verify(`${token}`, process.env.REFRESH_JWT_SECRET);
 
   return decoded;
 };
