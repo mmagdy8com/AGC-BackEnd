@@ -8,7 +8,7 @@ exports.generateAccessToken = (id) => {
 
 exports.generateAdminAccessToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
-    expiresIn: "2h",
+    expiresIn: "24h",
   });
 };
 
@@ -19,7 +19,7 @@ exports.generateRefreshToken = (id) => {
 };
 
 exports.verifyToken = (token) => {
-  const decoded = jwt.verify(`${token}`, process.env.REFRESH_JWT_SECRET);
+  const decoded = jwt.verify('${token}', process.env.REFRESH_JWT_SECRET);
 
   return decoded;
 };
